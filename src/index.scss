@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #303030;
+}
+
+button,
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  &:focus-visible {
+    outline: none;
+  }
+  &[type="button"],
+  &[type="submit"] {
+    cursor: pointer;
+    margin-left: 10px;
+    color: white;
+    background-color: blue;
+  }
+}
+
+.app-header {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & input[type="text"] {
+    width: 480px;
+  }
+}
+
+.app-header-shrunk {
+  min-height: 10vh;
+  transition: min-height 1s;
+}
+
+.images-preview {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+  background-color: blue;
+
+  & > .image-tile {
+    position: relative;
+    width: 25%;
+
+    & > button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      padding: 0;
+      line-height: 1.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background-color: transparent;
+
+      &.favorite-icon-active {
+        color: gold;
+      }
+      &.favorite-icon-inactive {
+        color: grey;
+      }
+    }
+
+    & > img {
+      width: 100%;
+    }
+  }
+}
